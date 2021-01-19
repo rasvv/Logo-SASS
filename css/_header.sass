@@ -1,0 +1,190 @@
+.header
+	background: url("../img/bg_header.jpg") top no-repeat
+	&__top
+
+	&__container
+
+	&__bottom
+
+.top-header
+	&__content
+		display: grid
+		grid-template-columns: 1fr 190px 1fr
+		align-items: center
+		height: 90px
+
+	&__column
+		&-logo
+			align-self: start
+			text-align: center
+			padding-top: 25px
+
+	&__menu
+
+	&__logo
+
+	&__contacts
+
+.menu
+	&__icon
+
+	&__body
+
+	&__list
+		display: grid
+		grid-template-columns: repeat(3, auto)
+
+	&__link
+		height: 27px
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		padding: 0 20px
+		color: #ffffff
+		font-family: Play
+		font-size: 14px
+		border-radius: 20px
+
+		text-decoration: underline
+		&:hover
+			background-color: #068292
+
+.icon-menu
+
+.contacts-header
+	display: flex
+	justify-content: center
+	&__column
+		padding: 0 30px
+		border-right: 1px solid #ffffff
+
+		&:last-child
+			border-right: none
+
+	&__item
+
+	&__item-icon
+		background: url("../img/icons/header/phone.png") bottom left no-repeat
+		padding-left: 40px
+
+	&__label
+		color: #ffffff
+		font-size: 12px
+		line-height: 18px
+		margin-bottom: 5px
+
+	&__phone
+		color: #ffffff
+		font-weight: 900
+		font-size: 18px
+
+.bottom-header
+	&__content
+		display: grid
+		grid-template-columns: 1fr 190px 1fr
+		height: 64px
+		align-items: center
+
+	&__column
+		display: grid
+		grid-template-columns: repeat(3, auto)
+
+	&__actions
+
+	&__info
+		// display: grid;
+		// grid-template-columns: repeat(3, auto);
+
+.actions-header
+	display: flex
+	height: 100%
+	align-items: center
+
+	& li
+
+	a
+		padding-left: 36px
+		display: inline-block
+		line-height: 24px
+		font-size: 14px
+		span
+			border-bottom: 1px dashed
+
+	&__login
+		background: url("../img/icons/header/login.png") left center no-repeat
+		color: #999999
+
+	&__reg
+		background: url("../img/icons/header/user.png") left center no-repeat
+		color: #1ab9ce
+
+	&__email
+		background: url("../img/icons/header/mail.png") left center no-repeat
+		color: #1ab9ce
+
+.schedule
+	padding-left: 36px
+	background: url("../img/icons/header/schedule.png") 0 center no-repeat
+	color: #999999
+
+.info-header
+	display: grid
+	grid-template-columns: repeat(3, auto)
+	height: 100%
+	align-items: center
+	grid-column: 3/4
+
+	&:nth-child(2)
+
+	&__column
+		margin-right: 38px
+		&:last-child
+			margin: 0
+
+	&__callback
+		background: url("../img/icons/header/callback.png") left center no-repeat
+		color: #1ab9ce
+		padding-left: 36px
+		margin-left: 18px
+		display: inline-block
+		line-height: 24px
+		font-size: 14px
+
+		span
+			border-bottom: 1px dashed
+
+	&__schedule
+		padding: 0
+		font-size: 12px
+		p
+			padding-bottom: 8px
+			&:last-child
+				padding: 0
+
+		span
+			font-weight: 700
+
+		// background: url("../img/icons/header/schedule.png") -40px center no-repeat;
+		// color: #999999;
+
+	&__cart
+		background: url("../img/icons/header/cart.png") left center no-repeat
+		color: #1ab9ce
+		padding: 0
+		height: 43px
+		min-width: 43px
+		display: inline-block
+		position: relative
+		top: 0
+		left: 0
+		span
+			position: absolute
+			left: 35px
+			// top: 5px;
+			font-size: 18px
+			color: #ffffff
+			font-weight: 700
+			background-color: #f68038
+			z-index: 3
+			padding: 6px 11px
+			border-radius: 20px

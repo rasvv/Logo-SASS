@@ -1,0 +1,494 @@
+@import "null"
+@import "vars"
+@import "mixins"
+
+@import "fonts"
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
+
+body
+	color: #000
+	font-size: 14px
+	&.lock
+		overflow: hidden
+
+html
+	font-family: 'Roboto', sans-serif
+	color: $mainTextColor
+
+h1
+	+font(48px, 85px, 400)
+	letter-spacing: 0.01em
+	// text-transform: uppercase
+
+h2
+	+font(36px, 44px, 900)
+	text-transform: uppercase
+	letter-spacing: 0.05em
+
+h3
+	font-family: 'Uni Sans Heavy Caps', sans-serif
+	+font(30px, 30px, 700)
+	text-transform: uppercase
+	letter-spacing: 0.05em
+
+h4
+	+font(18px, 27px, 400)
+	text-transform: uppercase
+	letter-spacing: 0.05em
+
+p
+	font-family: 'Roboto', sans-serif
+	+font(12px, 18px, 400)
+
+.text
+	font-family: 'Open Sans', sans-serif
+	+font(14px, 19px, 300)
+
+a
+	// font-family: 'Open Sans', sans-serif
+	+font(14px, 18px, 400)
+
+body
+	font-family: $fontfamily
+
+.container
+	max-width: $maxWidthContainer + px
+	margin: 0 auto
+	// padding: 0 20px
+	// @media (max-width: $md1+px) {
+	// 	max-width: 970px;
+	// }
+
+	// @media (max-width: $md2+px) {
+	// 	max-width: 750px;
+	// }
+
+	// @media (max-width: $md3+px) {
+	// 	max-width: none;
+	// 	padding: 0 10px;
+	// }
+
+.header
+	background: url("../img/bg_header.jpg") top no-repeat
+	&__top
+
+	&__container
+
+	&__bottom
+
+.top-header
+	&__content
+		display: grid
+		grid-template-columns: 1fr 190px 1fr
+		align-items: center
+		height: 90px
+
+	&__column
+		&-logo
+			align-self: start
+			text-align: center
+			padding-top: 25px
+
+	&__menu
+
+	&__logo
+
+	&__contacts
+
+.menu
+	&__icon
+
+	&__body
+
+	&__list
+		display: grid
+		grid-template-columns: repeat(3, auto)
+
+	&__link
+		// height: 27px
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		padding: 0 20px
+		color: #ffffff
+		font-family: Play
+		+font(14px, 27px, 700)
+		// font-size: 14px
+		border-radius: 20px
+
+		text-decoration: underline
+		&:hover
+			background-color: #068292
+
+.contacts-header
+	display: flex
+	justify-content: center
+	&__column
+		padding: 0 30px
+		border-right: 1px solid #ffffff
+
+		&:last-child
+			border-right: none
+
+	&__item
+
+	&__item-icon
+		background: url("../img/icons/header/phone.png") center left no-repeat
+		padding-left: 40px
+
+	&__label
+		color: #ffffff
+		font-size: 12px
+		line-height: 18px
+		margin-bottom: 5px
+
+	&__phone
+		color: #ffffff
+
+.bottom-header
+
+	&__content
+		display: grid
+		grid-template-columns: 1fr 190px 1fr
+		height: 64px
+		align-items: center
+		padding: 0 20px
+
+	&__column
+		display: grid
+		grid-template-columns: repeat(3, auto)
+
+	&__actions
+
+	&__info
+		// display: grid;
+		// grid-template-columns: repeat(3, auto);
+
+.actions-header
+	display: flex
+	height: 100%
+	align-items: center
+
+	& li
+
+	a
+		padding-left: 36px
+		display: inline-block
+		line-height: 24px
+		font-size: 14px
+		span
+			border-bottom: 1px dashed
+
+	&__login
+		background: url("../img/icons/header/login.png") left center no-repeat
+		color: #999999
+
+	&__reg
+		background: url("../img/icons/header/user.png") left center no-repeat
+		color: $cardColor
+
+	&__email
+		background: url("../img/icons/header/mail.png") left center no-repeat
+		color: $cardColor
+
+.schedule
+	padding-left: 36px
+	background: url("../img/icons/header/schedule.png") 0 center no-repeat
+	color: #999999
+
+.info-header
+	display: grid
+	grid-template-columns: repeat(3, auto)
+	height: 100%
+	align-items: center
+	grid-column: 3/4
+
+	&:nth-child(2)
+
+	&__column
+		margin-right: 38px
+		&:last-child
+			margin: 0
+
+	&__callback
+		background: url("../img/icons/header/callback.png") left center no-repeat
+		color: $cardColor
+		padding-left: 36px
+		margin-left: 18px
+		display: inline-block
+		line-height: 24px
+		font-size: 14px
+
+		span
+			border-bottom: 1px dashed
+
+	&__schedule
+		padding: 0
+		font-size: 12px
+		p
+			padding-bottom: 8px
+			&:last-child
+				padding: 0
+
+		span
+			font-weight: 700
+
+		// background: url("../img/icons/header/schedule.png") -40px center no-repeat;
+		// color: #999999;
+
+	&__cart
+		background: url("../img/icons/header/cart.png") left center no-repeat
+		color: $cardColor
+		padding: 0
+		height: 43px
+		min-width: 43px
+		display: inline-block
+		position: relative
+		top: 0
+		left: 0
+		span
+			position: absolute
+			left: 35px
+			// top: 5px;
+			font-size: 18px
+			color: #ffffff
+			font-weight: 700
+			background-color: $bubbleColor
+			z-index: 3
+			padding: 6px 11px
+			border-radius: 20px
+
+.main
+	display: flex
+	column-gap: 31px
+
+.navigator
+	width: 261px
+
+	&__menu
+		padding-top: 21px
+		position: relative
+		background-color: $backgroundColor
+		color: $headerColor
+		margin-bottom: 44px
+
+		&-title
+			padding-left: 21px
+			margin-bottom: 20px
+
+		&-burger
+			position: absolute
+			top: 31px
+			right: 21px
+			z-index: 1
+			cursor: pointer
+
+		&-items
+			// height: 703px
+
+		&-item
+			// height: 40px
+			// line-height: 40px
+			+font(12px, 40px, 300)
+			border-bottom: 1px solid $borderLineColor
+			padding-left: 21px
+			position: relative
+			cursor: pointer
+
+			&:hover
+				background-color: $backgroundHoverColor
+
+			&.share
+				&::after
+					content: url(../img/icons/btn_arrow.webp)
+					position: absolute
+					top: 5px
+					right: 10px
+					z-index: 1
+
+	&__news
+		margin-bottom: 76px
+		&-caption
+			color: $cardColor
+			margin-bottom: 36px
+
+		&-card
+
+	&__reviews
+
+		&-caption
+			color: #dadada
+			margin-bottom: 36px
+
+		&-item
+
+.news
+
+	&__card
+		margin-bottom: 47px
+
+		&-title
+			text-transform: uppercase
+			margin-bottom: 16px
+
+			&.top
+				color: #fd8322
+
+		&-event
+			display: flex
+			column-gap: 16px
+
+		&-date
+			+font(18px, 18px, 300)
+			font-family: 'Roboto', serif
+			color: #d8d8d8
+
+			& span
+				+font(24px, 36px, 700)
+
+		&-text
+			color: #666666
+
+.reviews
+	&__card
+		margin-bottom: 18px
+
+		&-top
+			display: flex
+			justify-content: space-between
+			margin-bottom: 6px
+
+		&-user
+			text-transform: uppercase
+			font-weight: 900
+
+		&-date
+
+		&-text
+			padding: 15px 8px 19px 26px
+			position: relative
+
+			&::before
+				content: url(../img/icons/marks.png)
+				position: absolute
+				top: 18px
+				left: 4px
+				z-index: 1
+				height: 35px
+
+		&.highlights
+			color: $cardColor
+
+			& .reviews__card-text
+				background-color: $cardColor
+				color: $headerColor
+
+.basic
+	width: $maxWidthContainer - 261px
+	// width: calc(846px)
+
+	&__search
+		display: flex
+		width: 100%
+		margin-bottom: 22px
+		&-filter
+			display: block
+			width: 116px
+			height: 39px
+			line-height: 39px
+			color: #666666
+			background-color: #f3f3f3
+			padding-left: 44px
+			position: relative
+			text-decoration: underline dashed
+
+			&::before
+				content: url(../img/icons/search_page.png)
+				position: absolute
+				top: 5px
+				left: 14px
+
+			&::after
+				content: url(../img/icons/search_page_arrows.png)
+				position: absolute
+				top: 2px
+				right: 13px
+
+		&-input
+			display: block
+			width: calc(100% - 202px)
+			border: 2px solid #f2f2f2
+
+		&-button
+			width: 86px
+			height: 39px
+			border: 2px solid #f2f2f2
+			background-color: $bubbleColor
+			color: $headerColor
+			text-transform: uppercase
+			+font(12px, 18px, 700)
+
+	&__header
+		background: url('../img/mainslider/01.jpg') no-repeat
+		background-position: top center
+		background-size: cover
+		height: 383px
+		padding: 21px 36px
+		width: 100%
+		color: $headerColor
+		margin-bottom: 90px
+
+		&-text
+			top: 159px
+			left: 38px
+			z-index: 10
+			margin-bottom: 16px
+
+		&-price
+			width: 190px
+			+font(36px, 24px, 700)
+			position: relative
+			display: block
+			margin: 0 auto 24px
+			padding-right: 30px
+
+			&::after
+				content: url(../img/icons/ruble.png)
+				position: absolute
+				top: 0px
+				left: 170px
+				z-index: 1
+
+		&-button
+			width: 145px
+			height: 33px
+			color: $headerColor
+			position: relative
+			text-transform: uppercase
+			font-weight: 700
+			border: 3px solid $headerColor
+			padding: 6px 40px 9px 22px
+			border-radius: 20px
+			box-sizing: border-box
+			display: block
+			margin: 0 auto
+
+			&::after
+				content: url(../img/icons/btn_arrow.png)
+				position: absolute
+				top: 6px
+				right: 10px
+				z-index: 1
+
+		&-icons
+			width: 465px
+			margin: 0 auto
+			display: flex
+			justify-content: space-between
+			position: relative
+			bottom: -28px
+
+		&-icon
+			width: 55px
+			height: 55px
