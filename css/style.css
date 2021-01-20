@@ -164,6 +164,20 @@ h4 {
   letter-spacing: 0.05em;
 }
 
+h5 {
+  font-size: 23px;
+  line-height: 24px;
+  font-weight: 700;
+  font-family: 'Uni Sans Heavy Caps', sans-serif;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
 p {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
@@ -1197,6 +1211,117 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigator__menu {
+  padding: 21px 0;
+  margin-bottom: 20px;
+}
+
+.navigator__menu-title {
+  margin-bottom: 0;
+}
+
+.filter {
+  border: 4px solid #72c9d4;
+  background-color: #f9f9f9;
+  color: #36949f;
+  padding: 29px 0;
+}
+
+.filter__underline {
+  border-bottom: 1px solid #72c9d4;
+}
+
+.filter__caption {
+  font-family: 'Roboto';
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.filter__price {
+  padding: 0 19px 29px;
+}
+
+.filter__compare {
+  padding: 27px 19px 30px;
+}
+
+.filter__compare-title {
+  margin-bottom: 21px;
+  color: #333333;
+}
+
+.filter__compare-item {
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.filter__compare-link {
+  color: #1ab9ce;
+  display: block;
+  text-decoration: underline;
+}
+
+.filter__compare-close {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+.filter__compare-close:hover svg use {
+  fill: #53b5de;
+}
+
+.filter__compare-bottom {
+  padding-right: 0px;
+  margin: 20px 0 0;
+}
+
+.filter__compare-button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 33px;
+  padding: 8px 20px 6px 43px;
+  background-color: #1ab9ce;
+  border-radius: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+}
+
+.filter__compare-button::before {
+  content: url(../img/icons/compare.png);
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  z-index: 1;
+  height: 35px;
+}
+
+.filter__compare-trash {
+  width: 40px;
+  height: 40px;
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

@@ -5,6 +5,23 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$(function () {
+				$("#slider-range").slider({
+					range: true,
+					min: 0,
+					max: 200000,
+					values: [0, 100000],
+					slide: function (event, ui) {
+						$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+					}
+				});
+				$("#amount").val("$" + $("#slider-range").slider("values", 0) +
+					" - $" + $("#slider-range").slider("values", 1));
+			});
+		</script>
 		<title>Logo</title>
 	</head>
 
@@ -103,9 +120,89 @@
 				<section class="navigator__menu">
 					<h3 class="navigator__menu-title">Каталог товаров</h3>
 					<div class="navigator__menu-burger"><img src="img/icons/Burger.png" alt="Burger"></div>
-
 				</section>
 
+				<form action="#" class="filter">
+					<h5 class="filter__caption">Фильтр товаров</h5>
+					<div class="filter__price filter__underline">
+						<p class="filter__price-title">Цена (руб.):</p>
+
+
+						<p>
+							<label for="amount">Price range:</label>
+							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+						</p>
+
+						<div id="slider-range"></div>
+
+						<p>
+							<label for="from">от</label>
+							<input type="text" id="from">
+						</p>
+
+						<p>
+							<label for="to">до</label>
+							<input type="text" id="to">
+						</p>
+
+					</div>
+
+					<div class="filter__compare filter__underline">
+						<h6 class="filter__compare-title">Товары для сравнения</h6>
+
+						<div class="filter__compare-item">
+							<a href="#" class="filter__compare-link">NordicTrack C100</a>
+							<div class="filter__compare-close">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+									height="18" viewBox="0 0 30 30">
+									<defs>
+										<path id="a"
+											d="M691.485 160.07l-1.414 1.415-7.071-7.071-7.071 7.071-1.414-1.414 7.07-7.071-7.07-7.071 1.414-1.415 7.07 7.071 7.072-7.07 1.414 1.414-7.07 7.07z" />
+									</defs>
+									<use fill="#999" xlink:href="#a" transform="translate(-674 -144)" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="filter__compare-item">
+							<a href="#" class="filter__compare-link">Clear Fit Luxury LT.20</a>
+							<div class="filter__compare-close">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+									height="18" viewBox="0 0 30 30">
+									<defs>
+										<path id="a"
+											d="M691.485 160.07l-1.414 1.415-7.071-7.071-7.071 7.071-1.414-1.414 7.07-7.071-7.07-7.071 1.414-1.415 7.07 7.071 7.072-7.07 1.414 1.414-7.07 7.07z" />
+									</defs>
+									<use fill="#999" xlink:href="#a" transform="translate(-674 -144)" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="filter__compare-item">
+							<a href="#" class="filter__compare-link">Ammity ATM 720 TFT+</a>
+							<div class="filter__compare-close">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+									height="18" viewBox="0 0 30 30">
+									<defs>
+										<path id="a"
+											d="M691.485 160.07l-1.414 1.415-7.071-7.071-7.071 7.071-1.414-1.414 7.07-7.071-7.07-7.071 1.414-1.415 7.07 7.071 7.072-7.07 1.414 1.414-7.07 7.07z" />
+									</defs>
+									<use fill="#999" xlink:href="#a" transform="translate(-674 -144)" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="filter__compare-item filter__compare-bottom">
+							<a href="#" class="filter__compare-button">Сравнить</a>
+							<div class="filter__compare-trash"><img src="img/icons/trash.png" alt=""></div>
+
+						</div>
+
+					</div>
+
+
+
+				</form>
 
 
 			</nav>
@@ -421,55 +518,6 @@
 			</div>
 
 		</main>
-
-		<div class="brands">
-			<div class="brands__slider container">
-				<a class="brands__slider-prev btn-arrow" href="#">
-					<svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29">
-						<defs>
-							<clipPath id="pj7na">
-								<path fill="#fff"
-									d="M0 29V0h33v29zM29.945 9.199H17.524V3.511L2.95 14.5l14.573 10.99v-5.688h12.42z" />
-							</clipPath>
-						</defs>
-						<g>
-							<g>
-								<path fill="#fff" d="M29.945 19.803H17.524v5.688L2.95 14.501l14.573-10.99v5.688h12.42z" />
-								<path fill="none" stroke="#fd8424" stroke-linecap="round" stroke-linejoin="round"
-									stroke-miterlimit="20" stroke-width="6"
-									d="M29.945 19.803v0H17.524v5.688L2.95 14.501v0l14.573-10.99v5.688h12.42v0z"
-									clip-path="url(&quot;#pj7na&quot;)" />
-							</g>
-						</g>
-					</svg>
-				</a>
-				<a href="#" class="brands__link"><img src="img/brands/01.jpg" alt="01"></a>
-				<a href="#" class="brands__link"><img src="img/brands/02.jpg" alt="02"></a>
-				<a href="#" class="brands__link"><img src="img/brands/03.png" alt="03"></a>
-				<a href="#" class="brands__link"><img src="img/brands/04.png" alt="04"></a>
-				<a href="#" class="brands__link"><img src="img/brands/05.png" alt="05"></a>
-				<a class="brands__slider-next btn-arrow" href="#">
-					<svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29">
-						<defs>
-							<clipPath id="n8xca">
-								<path fill="#fff"
-									d="M0 29V0h33v29zm3.01-9.197h12.42v5.689L30.003 14.5 15.43 3.51v5.688H3.01z" />
-							</clipPath>
-						</defs>
-						<g>
-							<g>
-								<path fill="#fff" d="M3.01 19.803h12.42v5.689L30.003 14.5 15.43 3.51v5.688H3.01z" />
-								<path fill="none" stroke="#fd8424" stroke-linecap="round" stroke-linejoin="round"
-									stroke-miterlimit="20" stroke-width="6"
-									d="M3.01 19.803v0h12.42v5.689L30.003 14.5v0L15.43 3.51v5.688H3.01v0z"
-									clip-path="url(&quot;#n8xca&quot;)" />
-							</g>
-						</g>
-					</svg>
-				</a>
-			</div>
-		</div>
-
 
 		<div class="info">
 			<div class="container">
