@@ -9,16 +9,89 @@
 .filter
 	border: 4px solid #72c9d4
 	background-color: #f9f9f9
-	color: $catalogColor
 	padding: 29px 0
 
 	&__underline
 		border-bottom: 1px solid #72c9d4
+		padding: 27px 19px 17px
+
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		margin-bottom: 22px
+
+	&__title
+		+font(14px, 22px, 700)
+
+	&__opener
+		width: 30px
+		height: 30px
+		border-radius: 15px
+		background-color: $headerColor
+		display: flex
+		justify-content: center
+		align-items: center
+		border: 1px solid #cbcbcb
+
+		cursor: pointer
+	&__check
+		position: absolute
+		width: 1px
+		height: 1px
+		overflow: hidden
+		clip: rect(0 0 0 0)
+		padding-left: 20px
+		margin-bottom: 15px
+		&:checked
+			&+ .filter__style
+				border: 2px solid #53b5de
+				&::before
+					content: ''
+					width: 8px
+					height: 8px
+					background-color: #53b5de
+
+					position: absolute
+					z-index: 2
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+
+	&__label
+		color: #666666
+		padding-left: 20px
+		display: block
+		margin-bottom: 15px
+		position: relative
+		cursor: pointer
+
+	&__style
+		position: absolute
+		width: 16px
+		height: 16px
+		border: 2px solid #dadada
+		top: -2px
+		left: 20px
+		margin-left: -20px
 
 	&__caption
 		font-family: 'Roboto'
 		margin-bottom: 45px
 		text-align: center
+
+	&__open
+		color: $catalogColor
+		& .filter__opener
+			border: 1px solid #72c9d4
+			background: url(../img/icons/li_arrow.png) no-repeat
+			background-position: 9px 9px
+		& .filter__img
+			opacity: 0
+
+		& .filter__top
+			margin-bottom: 0
 
 	&__price
 
@@ -31,7 +104,6 @@
 
 		&-title
 			margin-bottom: 21px
-			color: #333333
 
 		&-item
 			padding-right: 16px
@@ -85,3 +157,89 @@
 			display: flex
 			justify-content: center
 			align-items: center
+
+	&__maker
+		padding: 27px 19px 17px
+
+	&__angle
+		border-bottom: none
+
+	&__buttons
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 19px 19px 0
+
+	&__button
+		width: 96px
+		height: 35px
+		text-align: center
+		border-radius: 0
+		border: none
+		color: #666666
+		background-color: #e6e6e6
+		transition: all ease 0.5s
+
+		&:hover
+			color: #ffffff
+			background-color: #fd8424
+
+.basic
+
+	&__path
+
+		height: 79px
+
+		&-link
+			line-height: 79px
+			text-decoration: underline
+			color: $cardColor
+			margin-right: 30px
+			position: relative
+
+			&::after
+				content: url(../img/icons/li_arrow.png)
+				position: absolute
+				top: -29px
+				right: -23px
+				z-index: 1
+				height: 35px
+
+			&.active-link
+				text-decoration: none
+				color: #999999
+
+				&::after
+					content: ''
+
+	&__catalog
+
+		&-sorting
+
+.sorting
+	height: 48px
+	background-color: #f3f3f3
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 17px 0 23px
+	margin-bottom: 15px
+
+	&__left
+
+	&__label
+
+	&__select
+		margin-left: 8px
+		width: 166px
+		height: 29px
+		padding: 0 16px 0 16px
+
+	&__right
+
+	&__img
+
+		&-grid
+
+		&-list
+			margin-left: 8px
