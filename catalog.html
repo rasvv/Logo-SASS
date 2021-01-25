@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -15,11 +16,13 @@
 					max: 200000,
 					values: [0, 100000],
 					slide: function (event, ui) {
-						$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+						$("#from").val(ui.values[0]);
+						$("#to").val(ui.values[1]);
 					}
 				});
-				$("#amount").val("$" + $("#slider-range").slider("values", 0) +
-					" - $" + $("#slider-range").slider("values", 1));
+				$("#from").val($("#slider-range").slider("values", 0));
+				$("#to").val($("#slider-range").slider(
+					"values", 1));
 			});
 		</script>
 		<title>Logo</title>
@@ -125,25 +128,29 @@
 				<form action="#" class="filter">
 					<h5 class="filter__caption">Фильтр товаров</h5>
 					<div class="filter__price filter__underline">
-						<p class="filter__price-title">Цена (руб.):</p>
+						<h6 class="filter__price-title filter__title">Цена (руб.):</h6>
 
 
-						<p>
-							<label for="amount">Price range:</label>
-							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-						</p>
+						<div id="slider-range" class="filter__price-slider"></div>
 
-						<div id="slider-range"></div>
+						<!-- <p class="filter__price-range">
+							<label for="amount"></label>
+							<input class="filter__price-input" type="text" id="amount" readonly>
+						</p> -->
 
-						<p>
-							<label for="from">от</label>
-							<input type="text" id="from">
-						</p>
+						<div class="filter__price-inputs">
+							<p class="filter__price-from">
+								<label for="from">от</label>
+								<input type="text" id="from">
+							</p>
 
-						<p>
-							<label for="to">до</label>
-							<input type="text" id="to">
-						</p>
+							<p class="filter__price-to">
+								<label for="to">до</label>
+								<input type="text" id="to">
+							</p>
+						</div>
+
+
 
 					</div>
 
@@ -371,53 +378,96 @@
 					</div>
 
 					<div class="basic__catalog-paginator paginator">
-						<a class="basic__catalog-prev btn-arrow" href="#">
-							<svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29">
-								<defs>
-									<clipPath id="pj7na">
-										<path fill="#fff"
-											d="M0 29V0h33v29zM29.945 9.199H17.524V3.511L2.95 14.5l14.573 10.99v-5.688h12.42z" />
-									</clipPath>
-								</defs>
-								<g>
-									<g>
-										<path fill="#fff" d="M29.945 19.803H17.524v5.688L2.95 14.501l14.573-10.99v5.688h12.42z" />
-										<path fill="none" stroke="#fd8424" stroke-linecap="round" stroke-linejoin="round"
-											stroke-miterlimit="20" stroke-width="6"
-											d="M29.945 19.803v0H17.524v5.688L2.95 14.501v0l14.573-10.99v5.688h12.42v0z"
-											clip-path="url(&quot;#pj7na&quot;)" />
-									</g>
-								</g>
-							</svg>
-						</a>
+						<div class="paginator__left">
+							<p class="paginator__count-title">На странице:</p>
+							<select class="paginator__count-select">
+								<option value="По умолчанию" selected>9</option>
+							</select>
+						</div>
 
-						<p class="basic__catalog-pages"><span>3 </span>/ 15</p>
-
-						<a class="basic__catalog-next btn-arrow" href="#">
-							<svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29">
-								<defs>
-									<clipPath id="n8xca">
-										<path fill="#fff"
-											d="M0 29V0h33v29zm3.01-9.197h12.42v5.689L30.003 14.5 15.43 3.51v5.688H3.01z" />
-									</clipPath>
-								</defs>
-								<g>
+						<div class="paginator__right">
+							<a class="basic__catalog-prev btn-arrow" href="#">
+								<svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29">
+									<defs>
+										<clipPath id="pj7na">
+											<path fill="#fff"
+												d="M0 29V0h33v29zM29.945 9.199H17.524V3.511L2.95 14.5l14.573 10.99v-5.688h12.42z" />
+										</clipPath>
+									</defs>
 									<g>
-										<path fill="#fff" d="M3.01 19.803h12.42v5.689L30.003 14.5 15.43 3.51v5.688H3.01z" />
-										<path fill="none" stroke="#fd8424" stroke-linecap="round" stroke-linejoin="round"
-											stroke-miterlimit="20" stroke-width="6"
-											d="M3.01 19.803v0h12.42v5.689L30.003 14.5v0L15.43 3.51v5.688H3.01v0z"
-											clip-path="url(&quot;#n8xca&quot;)" />
+										<g>
+											<path fill="#fff"
+												d="M29.945 19.803H17.524v5.688L2.95 14.501l14.573-10.99v5.688h12.42z" />
+											<path fill="none" stroke="#fd8424" stroke-linecap="round" stroke-linejoin="round"
+												stroke-miterlimit="20" stroke-width="6"
+												d="M29.945 19.803v0H17.524v5.688L2.95 14.501v0l14.573-10.99v5.688h12.42v0z"
+												clip-path="url(&quot;#pj7na&quot;)" />
+										</g>
 									</g>
-								</g>
-							</svg>
-						</a>
+								</svg>
+							</a>
+
+							<!-- <div class="basic__catalog-pages">
+								<p class="basic__catalog-page active">1</p>
+								<p class="basic__catalog-page">2</p>
+								<p class="basic__catalog-page">3</p>
+								<p class="basic__catalog-page">4</p>
+								<p class="basic__catalog-page">5</p>
+								<p class="basic__catalog-page">...</p>
+								<p class="basic__catalog-page">10</p>
+							</div> -->
+
+							<ul class="basic__catalog-pages">
+								<li class="basic__catalog-item active">
+									<p class="basic__catalog-page active">1</p>
+								</li>
+								<li class="basic__catalog-item">
+									<p class="basic__catalog-page">2</p>
+								</li>
+								<li class="basic__catalog-item">
+									<p class="basic__catalog-page">3</p>
+								</li>
+								<li class="basic__catalog-item">
+									<p class="basic__catalog-page">4</p>
+								</li>
+								<li class="basic__catalog-item">
+									<p class="basic__catalog-page">5</p>
+								</li>
+								<li class="basic__catalog-item">
+									<p class="basic__catalog-page">...</p>
+								</li>
+								<li class="basic__catalog-item">
+									<p class="basic__catalog-page">10</p>
+								</li>
+							</ul>
+
+
+							<a class="basic__catalog-next btn-arrow" href="#">
+								<svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29">
+									<defs>
+										<clipPath id="n8xca">
+											<path fill="#fff"
+												d="M0 29V0h33v29zm3.01-9.197h12.42v5.689L30.003 14.5 15.43 3.51v5.688H3.01z" />
+										</clipPath>
+									</defs>
+									<g>
+										<g>
+											<path fill="#fff" d="M3.01 19.803h12.42v5.689L30.003 14.5 15.43 3.51v5.688H3.01z" />
+											<path fill="none" stroke="#fd8424" stroke-linecap="round" stroke-linejoin="round"
+												stroke-miterlimit="20" stroke-width="6"
+												d="M3.01 19.803v0h12.42v5.689L30.003 14.5v0L15.43 3.51v5.688H3.01v0z"
+												clip-path="url(&quot;#n8xca&quot;)" />
+										</g>
+									</g>
+								</svg>
+							</a>
+						</div>
 					</div>
 
 					<div class="basic__catalog-main catalog__items">
 						<div class="catalog__item">
 							<div class="catalog__item-simple">
-								<img src="img/catalog/01.jpg" alt="" class="catalog__item-img">
+								<img src="img/catalog/02.jpg" alt="" class="catalog__item-img">
 								<p class="catalog__item-title">BH Fitness F1 G6414V</p>
 								<p class="catalog__item-category">Беговая дорожка</p>
 								<div class="catalog__item-oldprice">64 990 </div>
@@ -426,7 +476,7 @@
 							</div>
 
 							<div class="catalog__item-hover">
-								<img src="img/catalog/01.jpg" alt="" class="catalog__item-himg">
+								<img src="img/catalog/02.jpg" alt="" class="catalog__item-himg">
 								<p class="catalog__item-title catalog__item-htitle">BH Fitness F1 G6414V</p>
 								<p class="catalog__item-category catalog__item-hcategory">Беговая дорожка</p>
 								<div class="catalog__item-htext catalog__item-htype">Тип беговой дорожки:</div>
